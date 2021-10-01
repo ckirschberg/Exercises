@@ -23,7 +23,17 @@ public class Zoo {
         return total;
     }
 
+    public double averageStamina() {
+        double totalStamina = 0;
+        for (Elephant currentElephant : elephants) {
+            currentElephant.setStamina(100);
+            currentElephant.charge();
+            totalStamina += currentElephant.getStamina();
+            System.out.println(currentElephant.getStamina());
+        }
+        return totalStamina / elephants.size();
 
+    }
 
 
 

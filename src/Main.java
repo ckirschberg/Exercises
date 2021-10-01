@@ -21,12 +21,24 @@ public class Main {
         Elephant e2 = new Elephant("Lise", 6500, true);
         Elephant e3 = new Elephant("Berit", 2500, false);
         System.out.println("stomping pressure is: " + e1.stomp());
-        e1.charge();
+        //e1.charge();
 
         Zoo zoo = new Zoo();
         zoo.addElephant(e1);
         zoo.addElephant(e2);
         zoo.addElephant(e3);
+
+        System.out.println("Stamina:");
+        System.out.println(e1.getStamina());
+        //e1.charge();
+        System.out.println(e1.getStamina());
+
+
+        zoo.allElephantsCharge();
+        System.out.println(zoo.averageStamina());
+
+
+
 
     }
 }

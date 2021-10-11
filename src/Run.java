@@ -72,7 +72,7 @@ public class Run
 
         Person person = people[0];
         //int max = people[0].getHeight();
-        for (int i=0; i< people.length; i++) {
+        for (int i=1; i< people.length; i++) {
             if(people[i].getHeight() > person.getHeight()) {
                 person = people[i];
                 //return people[i];
@@ -85,9 +85,43 @@ public class Run
     //6: write a static method that returns the first person object in the array, that weighs more and is taller than x and y.
     //x and y should be parameters to the method and the person array to search in as well.
     //The method should return null if the array is empty. (no people objects in it).
+    public static Person findHeavyAndTallPerson(double weight, int height, Person[] people) throws NullPointerException {
+
+        for (int i=0; i< people.length; i++) {
+            if(people[i].getHeight() > height && people[i].getWeight() > weight) {
+
+                return people[i];
+            }
+        }
+        return null;
+    }
+
+
+
 
 
     //7: write a method like the one above, but this time do not return only the first person object that fits the criteria.
     //Instead return all objects that fits the criteria. The method must work also if you changed the array and number of
     //people in it.
+    public static ArrayList<Person> findHeavyAndTallPeople(double weight, int height, Person[] people) throws NullPointerException {
+        ArrayList<Person> foundPeople = new ArrayList<>();
+
+        for (int i=0; i< people.length; i++) {
+            if(people[i].getHeight() > height && people[i].getWeight() > weight) {
+                foundPeople.add(people[i]);
+            }
+        }
+        return foundPeople;
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
